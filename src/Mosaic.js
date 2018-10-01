@@ -7,7 +7,6 @@ class Mosaic extends PureComponent {
     this.state = { giphys: [], message: '' };
   }
 
-
   render() {
     return (
       <div>

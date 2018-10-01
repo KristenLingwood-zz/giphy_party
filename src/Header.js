@@ -1,12 +1,7 @@
 import React, { PureComponent } from 'react';
-import SearchForm from './SearchForm';
+
 
 class Header extends PureComponent {
-  handleSearchSubmit = (e) => {
-    e.preventDefault();
-    console.log('searching....')
-    //search giphy/api call
-  }
 
   render() {
     return (
@@ -25,7 +20,6 @@ class Header extends PureComponent {
               <a className="nav-link" href="#">Clear my Giphys</a>
             </li>
           </ul>
-          <SearchForm></SearchForm>
         </div>
       </nav>
     )

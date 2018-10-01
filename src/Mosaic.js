@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import GiphyCard from './GiphyCard'
+import './mosaic.css'
 
 class Mosaic extends PureComponent {
   constructor(props) {
@@ -8,17 +9,17 @@ class Mosaic extends PureComponent {
   }
 
   render() {
-    const { giphys } = this.props
-    const giphyIMGs = giphys.map(gif => <GiphyCard key={gif.id} url={gif.url} alt={gif.title} title={gif.title} />)
-
-  return(
+    const giphyIMGs = this.props.giphys.map(gif => <GiphyCard key={gif.id} src={gif.images.fixed_height_still.url} alt={gif.title} title={gif.title} />)
+    console.log(giphyIMGs)
+    return (
       <div>
-  <h3>All the giphys say PARTY!!!</h3>
-{ giphyIMGs }
+        <h3>All the giphys say PARTY!!!</h3>
+        <div className="mosaic">
+          {giphyIMGs}
+        </div>
       </div >
     );
   }
 }
 
 export default Mosaic;
-

@@ -5,6 +5,7 @@ class Header extends PureComponent {
   clearGifs = () => {
     window.location.reload();
   }
+
   render() {
 
     return (

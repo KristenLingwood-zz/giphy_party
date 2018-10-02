@@ -15,6 +15,7 @@ class GiphyCard extends PureComponent {
       })
       await axios.post('https://hooks.slack.com/services/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', data).then((res) => {
         window.alert('Your gif has been posted to Slack');
+        console.log("Slack response: ", res)
       })
     } catch (error) {
       console.log(error)
@@ -22,14 +23,11 @@ class GiphyCard extends PureComponent {
     }
   }
 
-  async componentDidMount() {
+  async componentDidUpdate() {
     this.setState({ loading: true });
     await //????
       this.setState({ loading: false });
   }
-
-
-
 
   render() {
     let cardImg = '';

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Header from './Header'
-import SearchForm from './SearchForm';
+import GiphySection from './GiphySection';
 import './app.css'
 class App extends PureComponent {
 
@@ -8,7 +8,7 @@ class App extends PureComponent {
     return (
       <div className='app'>
         <Header />
-        <SearchForm />
+        <GiphySection />
       </div>
 
     );

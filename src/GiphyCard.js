@@ -37,18 +37,19 @@ class GiphyCard extends PureComponent {
         <div className="card-header">{this.props.title}</div>
         <div className="card-body">
           <img height="100%" width="100%" src={cardImg} alt={this.props.title} />
-          <button type="button" className="btn btn-success btn-sm"><a onClick={() => this.shareToSlack(this.props.src)} className="card-link">Share to Slack</a></button>
-
-          <OverlayTrigger trigger="click" placement="bottom" overlay={(<Popover id="popover-positioned-bottom" title="Giphy Info">
-            <strong>{this.props.title}</strong>
-            <ul>
-              <li>Source: {this.props.source}</li>
-              <li>Original Poster: {this.props.username}</li>
-              <li>Rating: {this.props.rating}</li>
-            </ul>
-          </Popover>)}>
-            <button className="btn btn-success btn-sm">Info</button>
-          </OverlayTrigger>
+          <div className="cardButtons">
+            <OverlayTrigger trigger="click" placement="bottom" overlay={(<Popover id="popover-positioned-bottom" title="Giphy Info">
+              <strong>{this.props.title}</strong>
+              <ul>
+                <li>Source: {this.props.source}</li>
+                <li>Original Poster: {this.props.username}</li>
+                <li>Rating: {this.props.rating}</li>
+              </ul>
+            </Popover>)}>
+              <button className="btn btn-info btn-sm infoButton">Info</button>
+            </OverlayTrigger>
+            <button type="button" className="btn btn-success btn-sm"><a onClick={() => this.shareToSlack(this.props.src)} className="card-link">Share to Slack</a></button>
+          </div>
         </div>
       </div>
     )

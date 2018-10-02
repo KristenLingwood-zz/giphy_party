@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GiphyCard /> matches the snapshot 1`] = `
+<div
+  className="card border-primary mb-3"
+>
+  <div
+    className="card-header"
+  />
+  <div
+    className="card-body"
+  >
+    <img
+      alt={undefined}
+      height="100%"
+      src={undefined}
+      width="100%"
+    />
+    <div
+      className="cardButtons"
+    >
+      <button
+        className="btn btn-info btn-sm infoButton"
+        onClick={[Function]}
+      >
+        Info
+      </button>
+      <button
+        className="btn btn-success btn-sm"
+        type="button"
+      >
+        <a
+          className="card-link"
+          onClick={[Function]}
+        >
+          Share to Slack
+        </a>
+      </button>
+    </div>
+  </div>
+</div>
+`;

@@ -28,3 +28,7 @@ ul {
 li {
   word-break: break-all;
 }
+
+.infoButton {
+  margin-right: 8px;
+}

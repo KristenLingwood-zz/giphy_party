@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GiphySection /> matches the snapshot 1`] = `
+<div
+  className="giphySection"
+>
+  <form
+    className="form-inline"
+    onSubmit={[Function]}
+  >
+    <label>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Find me some giphys!"
+        type="text"
+        value=""
+      />
+    </label>
+    <input
+      className="btn btn-primary btn-sm"
+      id="searchButton"
+      type="submit"
+      value="Search"
+    />
+  </form>
+  <button
+    className="btn btn-secondary btn-sm"
+    onClick={[Function]}
+  >
+    Suprise Me
+  </button>
+  <div>
+    <h3
+      className="text-primary"
+    >
+      All the giphys say PARTY!!!
+    </h3>
+    <div
+      className="mosaic"
+    />
+  </div>
+</div>
+`;

@@ -3,14 +3,9 @@ import GiphyCard from './GiphyCard'
 import './mosaic.css'
 
 class Mosaic extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { giphys: [], message: '' };
-  }
 
   render() {
-    const giphyIMGs = this.props.giphys.map(gif => <GiphyCard key={gif.id} src={gif.images.fixed_height_still.url} alt={gif.title} title={gif.title} />)
-    console.log(giphyIMGs)
+    const giphyIMGs = this.props.giphys.map(gif => <GiphyCard key={gif.id} src={gif.images.fixed_height.url} alt={gif.title} title={gif.title} url={gif.url} loading={this.props.loading} source={gif.source} rating={gif.rating} username={gif.username} />)
     return (
       <div>
         <h3>All the giphys say PARTY!!!</h3>
@@ -23,3 +18,4 @@ class Mosaic extends PureComponent {
 }
 
 export default Mosaic;
+

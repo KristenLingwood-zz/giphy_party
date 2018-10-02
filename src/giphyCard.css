@@ -1,5 +1,30 @@
 .card {
-  height: 300px;
+  height: 100%;
   width: 300px;
+}
 
+
+
+.card-links {
+  display: flex;
+  align-content: space-between;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+button {
+  margin-top: 3%;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  word-break: break-all;
 }

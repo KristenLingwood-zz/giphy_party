@@ -1,14 +1,56 @@
 import React, { PureComponent } from 'react';
+import axios from 'axios'
+import { Popover, OverlayTrigger } from 'react-bootstrap'
 import './giphyCard.css'
+import loadingCat from './loadingCat.gif'
+
 class GiphyCard extends PureComponent {
+  state = {
+    loading: false
+  }
+  shareToSlack = async (src) => {
+    try {
+      const data = JSON.stringify({
+        text: { src }
+      })
+      await axios.post('https://hooks.slack.com/services/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', data).then((res) => {
+        window.alert('Your gif has been posted to Slack');
+      })
+    } catch (error) {
+      console.log(error)
+      window.alert('Sorry, there was a problem posting to Slack.')
+    }
+  }
+
+  async componentDidMount() {
+    this.setState({ loading: true });
+    await //????
+      this.setState({ loading: false });
+  }
+
+
+
+
   render() {
+    let cardImg = '';
+    this.state.loading === true ? cardImg = loadingCat : cardImg = this.props.src
     return (
       <div className="card border-primary mb-3">
         <div className="card-header">{this.props.title}</div>
         <div className="card-body">
-          <img height="75%" width="75%" src={this.props.src} alt={this.props.title} />
-          <button type="button" className="btn btn-secondary btn-sm"><a href="#" className="card-link">See Giphy Details</a></button>
-          <button type="button" className="btn btn-success btn-sm"><a href="#" className="card-link">Share to Slack</a></button>
+          <img height="100%" width="100%" src={cardImg} alt={this.props.title} />
+          <button type="button" className="btn btn-success btn-sm"><a onClick={() => this.shareToSlack(this.props.src)} className="card-link">Share to Slack</a></button>
+
+          <OverlayTrigger trigger="click" placement="bottom" overlay={(<Popover id="popover-positioned-bottom" title="Giphy Info">
+            <strong>{this.props.title}</strong>
+            <ul>
+              <li>Source: {this.props.source}</li>
+              <li>Original Poster: {this.props.username}</li>
+              <li>Rating: {this.props.rating}</li>
+            </ul>
+          </Popover>)}>
+            <button className="btn btn-success btn-sm">Info</button>
+          </OverlayTrigger>
         </div>
       </div>
     )

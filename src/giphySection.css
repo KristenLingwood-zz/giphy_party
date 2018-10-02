@@ -7,8 +7,18 @@
 h3 {
   padding-top: 3%;
   text-align: center;
+  padding-bottom: 3%;
 }
 
-#searchButton {
+#searchButton,
+#submitGifButton {
   margin-left: 8px;
+}
+
+#surpriseButton {
+  margin-bottom: 1%;
+}
+
+.form-inline {
+  margin-top: 3%;
 }

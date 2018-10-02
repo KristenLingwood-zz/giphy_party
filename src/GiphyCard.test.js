@@ -3,7 +3,6 @@ import GiphyCard from './GiphyCard';
 import renderer from 'react-test-renderer';
 import ReactDOM from 'react-dom';
 
-
 const giphys = {
   data:
   {

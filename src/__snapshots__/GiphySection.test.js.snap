@@ -24,8 +24,29 @@ exports[`<GiphySection /> matches the snapshot 1`] = `
       value="Search"
     />
   </form>
+  <form
+    className="form-inline"
+    onSubmit={[Function]}
+  >
+    <label>
+      <input
+        className="form-control"
+        onChange={[Function]}
+        placeholder="Enter a gif url!"
+        type="text"
+        value=""
+      />
+    </label>
+    <input
+      className="btn btn-primary btn-sm"
+      id="submitGifButton"
+      type="submit"
+      value="Submit a Giphy"
+    />
+  </form>
   <button
     className="btn btn-secondary btn-sm"
+    id="surpriseButton"
     onClick={[Function]}
   >
     Suprise Me

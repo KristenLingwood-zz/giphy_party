@@ -63,15 +63,19 @@ class GiphySection extends PureComponent {
   submitGiphy = async () => {
     try {
       this.setState({ loading: true });
-      const response = await axios.post(`https://upload.giphy.com/v1/gifs`, {
+      const response = await axios({
+        method: 'post',
+        url: 'https://upload.giphy.com/v1/gifs',
         params: {
           api_key: process.env.REACT_APP_GIPHY_API_KEY,
           source_image_url: this.state.submitGifValue
         }
       });
-      this.setState({ ...this.state, giphys: [response.data.data] });
+      console.log('upload giphy response:', response);
+      this.setState({ ...this.state, loading: false });
     } catch (error) {
-      window.alert('Sorry, there was a problem uploading your giphy', error);
+      console.log(error);
+      window.alert('Sorry, there was a problem uploading your giphy');
     }
   };
 
